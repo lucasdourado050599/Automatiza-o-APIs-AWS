@@ -3,6 +3,7 @@ import json
 from datetime import date, timedelta, datetime
 from aws_requests_auth.aws_auth import AWSRequestsAuth
 
+###Pega DATA atual###
 data_started = date.today() - timedelta(days=1)
 data_ended = date.today() - timedelta(days=0)
 
@@ -35,6 +36,8 @@ body = {
   ],
    "Metrics":["BlendedCost", "UnblendedCost", "UsageQuantity"]
 }
+
+###Autenticação AWS###
 auth = AWSRequestsAuth(aws_access_key='access_key',
                        aws_secret_access_key='secret_access_key',
                        aws_host='ce.us-east-1.amazonaws.com',
